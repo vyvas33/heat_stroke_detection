@@ -3,11 +3,7 @@
 
 #define REPORTING_PERIOD_MS 1000
 
-// PulseOximeter is the higher level interface to the sensor
-// it offers:
-//  * beat detection reporting
-//  * heart rate calculation
-//  * SpO2 (oxidation level) calculation
+
 PulseOximeter pox;
 
 #include <Wire.h>
@@ -39,8 +35,7 @@ void setup() {
   Serial.print("Initializing pulse oximeter..");
 
   // Initialize the PulseOximeter instance
-  // Failures are generally due to an improper I2C wiring, missing power supply
-  // or wrong target chip
+  
   if (!pox.begin()) {
     Serial.println("FAILED");
     for (;;)
